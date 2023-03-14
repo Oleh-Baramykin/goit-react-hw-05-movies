@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Img = styled.img`
-  width: 300px;
+  width: 200px;
   padding-right: 20px;
 `;
 

@@ -50,12 +50,12 @@ export const searchMovies = async query => {
   }
 };
 
-export const movieCast = async movie_id => {
+export const getMovieCast = async movieId => {
   try {
     const response = await axios.get(
-      `${BASE_URL}/movie/${movie_id}/credits?api_key=${API_KEY}`
+      `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}`
     );
-    if (response.data.results.length === 0) {
+    if (response.data.cast.length === 0) {
       console.log('There is no cast');
     }
     return response.data.cast;
@@ -64,10 +64,10 @@ export const movieCast = async movie_id => {
   }
 };
 
-export const movieReview = async movie_id => {
+export const getMovieReview = async movieId => {
   try {
     const response = await axios.get(
-      `${BASE_URL}/movie/${movie_id}/reviews?api_key=${API_KEY}`
+      `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}`
     );
     if (response.data.results.length === 0) {
       console.log('There is no review');

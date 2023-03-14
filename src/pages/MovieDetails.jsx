@@ -17,7 +17,7 @@ export const MovieDitails = () => {
   }, [movieId]);
   // console.log(detailInfo);
   return (
-    <main style={{ padding: '0 60px 40px 60px' }}>
+    <main>
       {detailInfo && (
         <>
           <MovieInfo movieInfo={detailInfo} />
