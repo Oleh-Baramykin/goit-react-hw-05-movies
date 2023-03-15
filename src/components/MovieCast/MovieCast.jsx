@@ -1,15 +1,22 @@
+import { Ul, Image, Item, Character, Name } from './MovieCast.styled';
+
 export const MovieCast = ({ cast }) => {
   return (
-    <div>
+    <Ul>
       {cast.map(({ cast_id, name, character, profile_path }) => {
         return (
-          <div key={cast_id}>
-            <img src={profile_path} alt={name} />
-            <p>{name}</p>
-            <p>Character: {character}</p>
-          </div>
+          <Item key={cast_id}>
+            <Image
+              src={`https://image.tmdb.org/t/p/w200/${profile_path}`}
+              alt={name}
+            />
+            <Name>{name}</Name>
+            <Character>
+              <p>Character: {character}</p>
+            </Character>
+          </Item>
         );
       })}
-    </div>
+    </Ul>
   );
 };

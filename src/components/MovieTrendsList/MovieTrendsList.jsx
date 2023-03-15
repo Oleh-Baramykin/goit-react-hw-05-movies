@@ -1,18 +1,22 @@
 import { Link, useLocation } from 'react-router-dom';
+import { Box, Img } from './MovieTrendsList.styled';
 
 export const MovieTrendsList = ({ movies }) => {
   const location = useLocation();
   return (
-    <div>
-      {movies.map(({ title, id }) => {
+    <Box>
+      {movies.map(({ title, id, poster_path }) => {
         return (
-          <div key={id}>
+          <Box key={id}>
             <Link to={`/movies/${id}`} state={{ from: location }}>
-              <p>{title}</p>
+              <Img
+                src={`https://image.tmdb.org/t/p/w200/${poster_path}`}
+                alt={title}
+              />
             </Link>
-          </div>
+          </Box>
         );
       })}
-    </div>
+    </Box>
   );
 };

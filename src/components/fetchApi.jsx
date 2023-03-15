@@ -56,7 +56,7 @@ export const getMovieCast = async movieId => {
       `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}`
     );
     if (response.data.cast.length === 0) {
-      console.log('There is no cast');
+      console.log('There are no casts');
     }
     return response.data.cast;
   } catch (error) {
