@@ -24,18 +24,6 @@ export const detailInfoMovie = async movieId => {
   }
 };
 
-// export const detailInfoMovie = async movieId => {
-//   try {
-//     const response = await axios.get(
-//       `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`
-//     );
-//     return response.data;
-//   } catch (error) {
-//     Notify.failure('Oops...Try again');
-//     console.log(error);
-//   }
-// };
-
 export const searchMovies = async query => {
   try {
     const response = await axios.get(

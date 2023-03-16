@@ -7,4 +7,5 @@ export const Img = styled.img`
 
 export const Wrapper = styled.div`
   display: flex;
+  border: solid black 1pxp;
 `;
