@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Li = styled.li`
   list-style: none;
-  /* border: solid black 1px; */
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
