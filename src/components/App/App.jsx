@@ -5,7 +5,7 @@ import { NotFound } from 'pages/NotFound';
 import { MovieDitails } from 'pages/MovieDetails';
 import { Cast } from 'pages/Cast';
 import { Reviews } from 'pages/Reviews';
-import { SharedLayout } from './SharedLayout/SharedLayout';
+import { SharedLayout } from '../SharedLayout/SharedLayout';
 
 export const App = () => {
   return (

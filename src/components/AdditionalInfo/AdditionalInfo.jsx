@@ -1,4 +1,5 @@
 import { Title, Wrapper, Link, LinkWrap } from './AdditionalInfo.styled';
+import PropTypes from 'prop-types';
 
 export const AdditionalInfo = ({ backPath }) => {
   return (
@@ -14,4 +15,8 @@ export const AdditionalInfo = ({ backPath }) => {
       </LinkWrap>
     </Wrapper>
   );
+};
+
+AdditionalInfo.propTypes = {
+  backPath: PropTypes.object.isRequired,
 };

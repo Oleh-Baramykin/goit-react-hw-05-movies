@@ -1,21 +1,23 @@
-import { getTrendsMovies } from 'components/fetchApi';
+import { getTrendsMovies } from 'services/fetchApi';
 import { useState, useEffect } from 'react';
 import { MovieTrendsList } from 'components/MovieTrendsList/MovieTrendsList';
+import { Loader } from 'spinner/spinner';
 
 export const Home = () => {
   const [trendsMovies, settrendsMovies] = useState(null);
-  // const [onLoad, setonLOad] = useState(false);
+  const [onLoad, setonLOad] = useState(false);
 
   useEffect(() => {
-    // setonLOad(true);
+    setonLOad(true);
     getTrendsMovies().then(responce => {
       settrendsMovies([...responce]);
     });
-    // setonLOad(false);
+    setonLOad(false);
   }, []);
+
   return (
     <main>
-      {/* {onLoad && <Loader />} */}
+      {onLoad && <Loader />}
       {trendsMovies && <MovieTrendsList movies={trendsMovies} />}
     </main>
   );

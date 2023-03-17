@@ -1,4 +1,5 @@
 import { Li } from './MovieReview.styled';
+import PropTypes from 'prop-types';
 
 export const MovieReview = ({ review }) => {
   return (
@@ -13,4 +14,14 @@ export const MovieReview = ({ review }) => {
       })}
     </ul>
   );
+};
+
+MovieReview.propTypes = {
+  reviews: PropTypes.arrayOf(
+    PropTypes.shape({
+      author: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    })
+  ),
 };

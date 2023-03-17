@@ -1,7 +1,7 @@
 import { MovieReview } from 'components/MovieReview/MovieReview';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovieReview } from 'components/fetchApi';
+import { getMovieReview } from 'services/fetchApi';
 
 export const Reviews = () => {
   const [movieReview, setMovieReview] = useState();

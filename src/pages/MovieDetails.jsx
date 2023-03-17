@@ -1,9 +1,10 @@
-import { detailInfoMovie } from 'components/fetchApi';
+import { detailInfoMovie } from 'services/fetchApi';
 import { AdditionalInfo } from 'components/AdditionalInfo/AdditionalInfo';
 import { MovieInfo } from 'components/MovieInfo/MovieInfo';
 import { useParams, Outlet, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { BackLink } from 'components/BackLink/BackLink';
+import { Loader } from 'spinner/spinner';
 
 export const MovieDitails = () => {
   const [detailInfo, setdetailInfo] = useState(null);
@@ -18,7 +19,7 @@ export const MovieDitails = () => {
     };
     getInfoMovie();
   }, [movieId]);
-  // console.log(detailInfo);
+
   return (
     <main>
       {detailInfo && (
@@ -28,7 +29,9 @@ export const MovieDitails = () => {
           <AdditionalInfo backPath={backPath} />
         </>
       )}
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </main>
   );
 };

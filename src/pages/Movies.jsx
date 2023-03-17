@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { searchMovies } from 'components/fetchApi';
+import { searchMovies } from 'services/fetchApi';
 import { MovieTrendsList } from 'components/MovieTrendsList/MovieTrendsList';
 import { MovieSearch } from 'components/MovieSearch/MovieSearch';
 import { useSearchParams } from 'react-router-dom';
+import { Loader } from 'spinner/spinner';
 
 export const Movies = () => {
   const [searchResult, setsearchResult] = useState(null);
@@ -26,6 +27,7 @@ export const Movies = () => {
   return (
     <main>
       <MovieSearch onSubmit={onInputSearch} />
+      {onLoad && <Loader />}
       {searchResult && <MovieTrendsList movies={searchResult} />}
     </main>
   );
