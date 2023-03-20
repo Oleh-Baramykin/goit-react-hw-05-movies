@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Loader } from 'utils/spinner/spinner';
+import { Loader } from 'spinner/spinner';
 import { Container, Header, Link } from './SharedLayout.styled';
 
 export const SharedLayout = () => {
