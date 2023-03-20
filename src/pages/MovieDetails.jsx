@@ -8,22 +8,26 @@ import { Loader } from 'spinner/spinner';
 
 export const MovieDitails = () => {
   const [detailInfo, setdetailInfo] = useState(null);
+  const [onLoad, setOnLoad] = useState(false);
   const { movieId } = useParams();
   const location = useLocation();
   const backPath = location.state?.from ?? '/';
 
   useEffect(() => {
+    setOnLoad(true);
     const getInfoMovie = async () => {
       const data = await detailInfoMovie(movieId);
       setdetailInfo(data);
     };
     getInfoMovie();
+    setOnLoad(false);
   }, [movieId]);
 
   return (
     <main>
       {detailInfo && (
         <>
+          {onLoad && <Loader />}
           <BackLink to={backPath}>Go back</BackLink>
           <MovieInfo movieInfo={detailInfo} />
           <AdditionalInfo backPath={backPath} />
